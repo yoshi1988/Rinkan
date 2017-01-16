@@ -9,7 +9,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="PostID" Type="int" Nullable="false" />
           <Property Name="Datetime" Type="datetime" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="128" Nullable="false" />
@@ -20,7 +20,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Title" Type="nvarchar" MaxLength="256" Nullable="false" />
           <Property Name="Datetime" Type="datetime" Nullable="false" />
           <Property Name="Body" Type="nvarchar(max)" Nullable="false" />
@@ -29,7 +29,7 @@
           <Key>
             <PropertyRef Name="PostID" />
           </Key>
-          <Property Name="PostID" Type="int" Nullable="false" />
+          <Property Name="PostID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="PostTags" Type="int" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
@@ -38,7 +38,7 @@ warning 6002: The table/view 'master.dbo.Tags' does not have a primary key defin
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="128" />
         </EntityType>
         <Association Name="FK_Comments_Posts">
@@ -109,7 +109,7 @@ warning 6002: The table/view 'master.dbo.Tags' does not have a primary key defin
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="PostID" Type="Int32" Nullable="false" />
           <Property Name="Datetime" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
@@ -121,7 +121,7 @@ warning 6002: The table/view 'master.dbo.Tags' does not have a primary key defin
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Title" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Datetime" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Body" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
@@ -132,7 +132,7 @@ warning 6002: The table/view 'master.dbo.Tags' does not have a primary key defin
           <Key>
             <PropertyRef Name="PostID" />
           </Key>
-          <Property Name="PostID" Type="Int32" Nullable="false" />
+          <Property Name="PostID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="PostTags" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Posts" Relationship="Self.FK_PostsTags_Posts" FromRole="PostsTags" ToRole="Posts" />
           <NavigationProperty Name="Tags" Relationship="Self.FK_Tags_PostTag" FromRole="PostsTags" ToRole="Tags" />
@@ -141,7 +141,7 @@ warning 6002: The table/view 'master.dbo.Tags' does not have a primary key defin
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="PostsTags" Relationship="Self.FK_Tags_PostTag" FromRole="Tags" ToRole="PostsTags" />
         </EntityType>
@@ -181,7 +181,7 @@ warning 6002: The table/view 'master.dbo.Tags' does not have a primary key defin
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="masterEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="masterEntities2" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Comments" EntityType="Self.Comments" />
           <EntitySet Name="Posts" EntityType="Self.Posts" />
           <EntitySet Name="PostsTags" EntityType="Self.PostsTags" />
@@ -204,7 +204,7 @@ warning 6002: The table/view 'master.dbo.Tags' does not have a primary key defin
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="masterModelStoreContainer" CdmEntityContainer="masterEntities1">
+        <EntityContainerMapping StorageEntityContainer="masterModelStoreContainer" CdmEntityContainer="masterEntities2">
           <EntitySetMapping Name="Comments">
             <EntityTypeMapping TypeName="masterModel.Comments">
               <MappingFragment StoreEntitySet="Comments">
