@@ -83,6 +83,7 @@ namespace Rinkan.Controllers
             return View("Details", new { id = post.ID});
         }
 
+        [HttpGet]
         public ActionResult Edit(int? id)
         {
             Posts post = GetPost(id);
@@ -94,6 +95,21 @@ namespace Rinkan.Controllers
             return View(post);
         }
 
+        //[HttpPost]
+        //[ActionName("Index")]
+        //public ActionResult EditPost(Posts post)
+        //{
+        //   // int id = post.ID;
+        //    int title = post.Title;
+
+        //    //Posts post = GetPost(id);
+        //    //foreach(PostsTags postTag in post.PostsTags)
+        //    //{
+
+        //    //        }
+        //    ViewBag.Tags = "TODO";
+        //    return View(post);
+        //}
 
         private Tags GetTag(string tagName)
         {
