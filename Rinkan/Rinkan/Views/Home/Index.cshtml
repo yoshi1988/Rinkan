@@ -1,8 +1,8 @@
-﻿@model Rinkan.Models.Posts
+﻿@*@model Rinkan.Models.Posts
 
 @{
     ViewBag.Title = "Home Page";
-}
+}*@
 
 
 
@@ -17,25 +17,10 @@
 
 
 
-<div class="row">
-    <div class="col-md-3">
-        <a class="afm_44_1" rel="nofollow" href="http://ad-house.mobi/mmmseopc0003" imp="0:44:467" style="text-decoration:none;" target="_blank">
-            <img src="http://shockingblog.net/wp-content/uploads/2015/04/out22.jpg" height="170" width="256" hspace="3">
-        </a><p>
-            <a class="afm_44_1" rel="nofollow" href="http://ad-house.mobi/mmmseopc0003" imp="0:44:467" style="text-decoration:none;" target="_blank">
-                <marquee scrolldelay="300" scrollamount="30" width="30" style="width: 30px;"><font color="red">NEW</font></marquee><span>【本物レ○プ】公衆トイレで強姦魔にレイプされて捨てられた少女</span>
-            </a>
-        </p>
-    </div>
-    <div class="col-9">
-        <h3><a href="" title="Mr Big Load"><p>Mr Big Load</p></a></h3>
-        <p>A.K.A. "ukBiggestSpunker" is a sperm chucking champion capable of loads only obtainable by some high powered mutant not considered for mass production. Full Scenes: HERE</p>
-    </div>
-</div>
 
 
 
-<div class="row">
+@*<div class="row">
     <div class="col-md-4">
         <h2>Getting started</h2>
         <p>
@@ -55,4 +40,92 @@
         <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
         <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
     </div>
+</div>*@
+
+@model IEnumerable<Rinkan.Models.Posts>
+
+@{
+    ViewBag.Title = "Index1";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    bool isPreviousLinkVisible = ViewBag.IsPreviousLinkVisible ?? false;
+    bool isNextLinkVisible = ViewBag.IsNextLinkVisible ?? false;
+} 
+
+<h2>Index3</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@*<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Datetime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Body)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Datetime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Body)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+</table>*@
+
+
+@foreach (var item in Model)
+{ 
+<div class="row">
+    <div class="col-md-3">
+        <a class="afm_44_1" rel="nofollow" href="http://ad-house.mobi/mmmseopc0003" imp="0:44:467" style="text-decoration:none;" target="_blank">
+            <img src="http://shockingblog.net/wp-content/uploads/2015/04/out22.jpg" height="170" width="256" hspace="3">
+        </a><p>
+            <a class="afm_44_1" rel="nofollow" href="http://ad-house.mobi/mmmseopc0003" imp="0:44:467" style="text-decoration:none;" target="_blank">
+                <marquee scrolldelay="300" scrollamount="30" width="30" style="width: 30px;"><font color="red">NEW</font></marquee><span>【本物レ○プ】公衆トイレで強姦魔にレイプされて捨てられた少女</span>
+            </a>
+        </p>
+    </div>
+    <div class="col-md-9">
+        <h3><a href="" title="Mr Big Load">@item.Title</a></h3>
+        <p>}@item.Body</p>
+        @Html.ActionLink("Edit","Edit", new {id = item.ID })
+        @Html.ActionLink("Details","Details", new { id = item.ID })
+        @Html.ActionLink("Delete","Delete", new {id = item.ID })
+    </div>
 </div>
+}
+
+<div class="row">
+    <div class="col-md-6">
+        @if (isPreviousLinkVisible)
+        {
+            @Html.ActionLink("Previous Link", "Index", new { id = ViewBag.PageNumber - 1 })
+        }
+    </div>
+    <div class="col-md-6">
+        @if (isNextLinkVisible)
+        {
+            @Html.ActionLink("Next Link", "Index", new { id = ViewBag.PageNumber + 1 })
+        }
+    </div>
+ </div>

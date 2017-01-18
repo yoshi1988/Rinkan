@@ -329,6 +329,9 @@
     <Content Include="Views\Shared\_FooterPartial.cshtml" />
     <Content Include="Views\Account\Contact.cshtml" />
     <Content Include="Views\Home\Search.cshtml" />
+    <Content Include="Views\Home\Update.cshtml" />
+    <Content Include="Views\Home\Edit.cshtml" />
+    <Content Include="Views\Home\Index3.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
