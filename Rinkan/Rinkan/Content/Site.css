@@ -1,6 +1,7 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background: #1f1f1f;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -21,4 +22,25 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+div.widget-row{
+    background: #ffffff;
+    padding: 10px;
+    /*margin: 8px;*/
+}
+
+img.thumb{
+    border: 1px solid #000000;
+
+}
+
+div.widget-pagination{
+    background: #ffffff;
+    margin: 8px;
+}
+
+footer.widget-footer{
+    background: #ffffff;
+    margin: 8px;
 }

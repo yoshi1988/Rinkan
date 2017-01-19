@@ -111,6 +111,7 @@ namespace Rinkan.Controllers
         //    return View(post);
         //}
 
+
         private Tags GetTag(string tagName)
         {
             return this.masterEntity.Tags.Where(x => x.Name == tagName).FirstOrDefault() ?? new Tags() { Name = tagName }; 

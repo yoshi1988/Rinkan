@@ -11,7 +11,7 @@
     <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
     <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
 </div>*@
-@Html.Partial("_HeaderImages")
+@*@Html.Partial("_HeaderImages")*@
 
 
 
@@ -51,7 +51,6 @@
     bool isNextLinkVisible = ViewBag.IsNextLinkVisible ?? false;
 } 
 
-<h2>Index3</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -95,15 +94,15 @@
 
 @foreach (var item in Model)
 { 
-<div class="row">
+<div class="row widget-row">
     <div class="col-md-3">
         <a class="afm_44_1" rel="nofollow" href="http://ad-house.mobi/mmmseopc0003" imp="0:44:467" style="text-decoration:none;" target="_blank">
-            <img src="http://shockingblog.net/wp-content/uploads/2015/04/out22.jpg" height="170" width="256" hspace="3">
-        </a><p>
+            <img class="thumb" src="http://shockingblog.net/wp-content/uploads/2015/04/out22.jpg" height="170" width="256" hspace="3">
+        </a>@*<p>
             <a class="afm_44_1" rel="nofollow" href="http://ad-house.mobi/mmmseopc0003" imp="0:44:467" style="text-decoration:none;" target="_blank">
                 <marquee scrolldelay="300" scrollamount="30" width="30" style="width: 30px;"><font color="red">NEW</font></marquee><span>【本物レ○プ】公衆トイレで強姦魔にレイプされて捨てられた少女</span>
             </a>
-        </p>
+        </p>*@
     </div>
     <div class="col-md-9">
         <h3><a href="" title="Mr Big Load">@item.Title</a></h3>
@@ -115,7 +114,7 @@
 </div>
 }
 
-<div class="row">
+<div class="row widget-pagination">
     <div class="col-md-6">
         @if (isPreviousLinkVisible)
         {
